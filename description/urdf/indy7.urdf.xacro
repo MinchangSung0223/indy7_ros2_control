@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro" name="r6bot">
+
+  <!-- Import r6bot macro -->
+  <xacro:include filename="$(find moveit_resources_indy7_description)/urdf/indy7.urdf.xacro"/>
+
+  <!-- create link fixed to the "world" -->
+  <link name="world"/>
+
+  <xacro:indy7_description/>
+
+  <!-- Import r6bot ros2_control description -->
+  <xacro:include filename="$(find indy7_ros2_control)/ros2_control/indy7.ros2_control.xacro" />
+  <xacro:indy7_ros2_control name="indy7"/>
+
+</robot>

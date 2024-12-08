@@ -1,0 +1,25 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 10  # Hz
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    indy7_controller:  # 컨트롤러 정의
+      type: indy7_ros2_control/RobotController
+      ros__parameters:  # 컨트롤러 관련 매개변수
+        joints:  # 제어할 조인트 목록
+          - joint1
+          - joint2
+          - joint3
+          - joint4
+          - joint5
+          - joint6
+
+        command_interfaces:  # 명령 인터페이스 정의
+          - position
+          - velocity
+
+        state_interfaces:  # 상태 인터페이스 정의
+          - position
+          - velocity
